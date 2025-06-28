@@ -1,0 +1,79 @@
+Network Essentials :
+ LAN (LOCAL AREA NETWORK) :
+  1. IP (Internet Protocol) : Specific address given to a computer or a device like the roll number of a student.
+  2. SUBNET : It defines the range of the LAN which looks like 255.255.0.0 where these 255 tells the constant value and the 0's are the changable values
+  3. ROUTER : Allows the device fromt the LAN to communicate to the Outside Networks
+ WAN (WIDE AREA NETWORK) :
+  1. NAT (NETWORK ADDRESS TRANSMISSION) : It hides the local area IP and change it into some other IP's like 192.168.1.10 to 6.23.5.3
+  2. FIREWALL : Restricts the communication of the Internet or the outside Network into the local Area Network which is like blocking the access
+  3. DMZ (DE MILITARIZED ZONE) : LAN create a DMZ where the external device comes for the communication will be moved to the DMZ for communication where the device will be responsible for everything
+  4. PORT FORWARDING : It also uses for the communication of external device directly into the network by selecting a port forwarding where communcation happens in the forwarded port only.
+  
+
+CIA Triad :
+ 1. Confendiatility : Secure for the user
+ 2. Integrity : no data modification is done without permission	
+ 3. Availability : data is available for the legal users
+
+How Internet works :
+ 1. DNS = translates names to IP addresses
+ 2. IP Address = digital address of a device
+ 3. Ports = different services on the same device
+ 4. TCP/UDP = communication rules
+ 5. Packets = small pieces of the message
+ 6. Browser = rebuilds the message into a full website
+
+1. DNS (Domain Name System) : 
+		It change the name we type in the browsers into an Ip address. For example, If I type 'youtube.com' DNS finds or change the 'youtube.com' as '142.250.195.206' which is youtube's ip address
+
+			What Happens Behind the Scenes:
+				1. Browser checks local cache: “Have I visited this site before?”
+				2. If not found, it asks the DNS resolver (usually your ISP)
+				3. The resolver queries root DNS servers (starting point of DNS)
+				4. They direct it to TLD servers (.com, .org, .net)
+				5. Then it contacts authoritative DNS servers for google.com
+				6. It gets the IP address back
+				7. Your browser now connects to that IP address on port 443 (HTTPS)
+			
+			DNS LOOKUP types :
+				1. A Record - Maps domain to IPv4 address
+				2. AAAA Record - Maps domain to IPv6 address
+				3. CNAME - Alias for another domain
+				4. MX Record - Mail server info (used in emails)
+				5. NS Record - Name server of the domain
+				6. TXT Record - Extra info (like SPF for email security)
+			
+			DNS in Cyber Security : 
+					--Risk--						--Description--
+				DNS Spoofing		Attacker gives you a fake IP address for a real domain
+				DNS Hijacking		Changes your DNS settings to redirect traffic
+				DNS Tunneling		Hides malware or commands inside DNS queries
+				DNS Leak			When DNS traffic is not encrypted and can be spied on
+
+2. IP Address (Internet Protocol Address) :
+		An IP (Internet Protocol) address is a unique number given to every device connected to a network, like a computer, phone, or server.
+		It’s how devices find and talk to each other on the internet or local network — just like your home address is used to receive letters.
+
+				Real-Life Analogy
+				--In Real Life--		--On Internet--
+				Your home				Your device
+				Street address			IP address
+				Postman					Internet routers
+				Letter					Data packet
+
+		Types of IP :
+			1. IPv4 (32-bit) - Format: xxx.xxx.xxx.xxx, Example: 192.168.1.1
+			2. IPv6 (128-bit) - Format: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+		
+		Category of Ip :
+			1. Public IP	- Your device’s internet identity (visible to others online), 	Example : 103.44.220.1
+			2. Private IP	- Used inside your local network (home, school, etc.), 			Example : 192.168.1.2
+			3. Static IP	- Does not change												Used by websites/servers
+			4. Dynamic IP	- Changes often (assigned by your ISP/router),					Common for home users
+
+			Common Private IP range :
+				1. 192.168.0.0 to 192.168.255.255	- Home networks
+				2. 10.0.0.0 to 10.255.255.255		- Large networks
+				3. 172.16.0.0 to 172.31.255.255		- Medium-sized networks
+			
+			
