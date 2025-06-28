@@ -76,4 +76,8 @@ How Internet works :
 				2. 10.0.0.0 to 10.255.255.255		- Large networks
 				3. 172.16.0.0 to 172.31.255.255		- Medium-sized networks
 			
-			
+			IPs in Cybersecurity
+				IP scanning	- To find live devices (e.g., with nmap)
+				IP blocking	- Firewalls block suspicious IPs
+				IP spoofing	- Faking an IP to hide attacker's identity
+				Geolocation	- You can track location based on IP
