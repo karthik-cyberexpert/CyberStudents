@@ -81,3 +81,95 @@ How Internet works :
 				IP blocking	- Firewalls block suspicious IPs
 				IP spoofing	- Faking an IP to hide attacker's identity
 				Geolocation	- You can track location based on IP
+	
+	*SUBNET* :
+		Subnetting is the process of dividing a big network into smaller, manageable parts called subnets.
+	
+		Why Do We Subnet?
+			Reason				Explanation
+			Organization		Makes it easier to manage large networks
+			Security			Devices in one subnet can be isolated from others
+			Traffic Control		Reduces network congestion
+			IP Saving			Helps in better use of available IP addresses
+		
+		A subnet is a range of IP addresses that belong to a single network.
+		IP Address:        192.168.1.10
+		Subnet Mask:       255.255.255.0
+
+		| Subnet Mask     | Meaning                      | Hosts Allowed           |
+		| --------------- | ---------------------------- | ----------------------- |
+		| 255.0.0.0       | Very large network (Class A) | Over 16 million         |
+		| 255.255.0.0     | Medium network (Class B)     | Over 65,000             |
+		| 255.255.255.0   | Small network (Class C)      | 254 usable hosts        |
+		| 255.255.255.255 | Only one device              | For testing or loopback |
+
+		CIDR Notation (Classless Inter-Domain Routing) :
+			IP addresses were grouped in fixed blocks called Class A, B, and C, which wasted a lot of IP addresses. 
+			CIDR was introduced to allow more flexible division of IP address space, based on need rather than fixed classes.
+
+			Term				Meaning
+			CIDR				Classless Inter-Domain Routing
+			Notation			192.168.1.0/24 — the /24 shows how many bits are for the network
+			Why it's useful		Saves IP addresses, allows flexible subnetting, improves routing efficiency
+
+		IP Address Components
+			Say your IP is: 192.168.1.10
+			with Subnet Mask: 255.255.255.0 or /24
+
+			Part		Value
+			Network		192.168.1. (shared by all devices in subnet)
+			Host		10 (unique for each device)
+			Broadcast	192.168.1.255 (used to send to all in subnet)
+
+		Subnetting in Cybersecurity
+				Use					Why It Matters
+			Network Scanning	You scan a subnet to find live devices
+			Segmentation		Isolate sensitive machines into their own subnet
+			Defense				Firewalls can control traffic between subnets
+			Monitoring			Easier to watch smaller network zones
+
+3. PORTS :
+		A port is like a door or gate through which data enters or leaves a device using the internet or any network.
+		Your device can run many services at the same time — like web, email, remote access — and each one uses a different port number to keep them separate.
+
+		Total Ports and Ranges :
+			There are 65,536 ports in total — from 0 to 65535.
+			They are divided into 3 ranges:
+				Range			Name					Used By
+				0 – 1023		Well-known ports		HTTP, FTP, SSH, DNS, etc.
+				1024 – 49151	Registered ports		Apps like Skype, Zoom
+				49152 – 65535	Dynamic/Private ports	Temporary, for outbound connections
+		
+		Common Ports :
+				Port		Protocol		Use
+				20, 21		FTP				File transfers
+				22			SSH				Secure remote login (Linux, servers)
+				23			Telnet			Remote login (insecure)
+				25			SMTP			Sending email
+				53			DNS				Resolving domain names
+				80			HTTP			Web (insecure)
+				110			POP3			Receiving email
+				143			IMAP			Receiving email
+				443			HTTPS			Secure web traffic
+				3306		MySQL			Database connections
+				3389		RDP				Windows Remote Desktop
+
+		How Ports Work in a Connection
+			> When you visit a website like https://google.com:
+			> Your computer connects to Google’s IP
+			> It targets port 443 (used for HTTPS)
+			> Google replies using your IP and a random high port (like 55234)
+			> This way, both devices know how to talk
+
+		To See Open Ports in the system :
+			1. Linux : sudo netstat -tuln (t → TCP, u → UDP, l → Listening, n → Numeric IPs and ports)
+			2. Windows : netstat -aon
+		
+		Ports in Cybersecurity :
+				Activity				Purpose
+			Port Scanning			Attackers/pentesters scan for open ports using tools like nmap
+			Backdoors				Malicious software listens on hidden ports
+			Firewalls				Block unwanted ports (e.g., block port 23 to disable Telnet)
+			Network Hardening		Close unused ports to reduce attack surface
+
+		
